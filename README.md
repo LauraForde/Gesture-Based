@@ -1,4 +1,6 @@
-# Gesture-Based
-A group project where you have to use a gesture technology to power an application
+# Gesture Based  
+>By: Laura Forde & Ríona Greally  
+>Module: Gesture Based User Interface Development  
+>Lecturer: Damien Costello 
 
-Laura Forde & Ríona Greally
+ 
