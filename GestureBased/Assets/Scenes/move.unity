@@ -224,8 +224,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 939785896}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.21, y: 21, z: 10}
-  m_LocalScale: {x: 1.01722, y: 1.23982, z: 1}
+  m_LocalPosition: {x: 0.15, y: 26.82, z: 1}
+  m_LocalScale: {x: 1.6527925, y: 1.4549071, z: 1}
   m_Children: []
   m_Father: {fileID: 460303446}
   m_RootOrder: 2
@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aada462a1a555714ca48a8c8c8d79d82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 3
 --- !u!50 &939785899
 Rigidbody2D:
   serializedVersion: 4
@@ -295,7 +295,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: f8b91b5d1a88efe4ab9fe389120aba76, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -369,8 +369,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1121956741}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.21, y: 0.32, z: 10}
-  m_LocalScale: {x: 1.0172204, y: 1.2398163, z: 1}
+  m_LocalPosition: {x: 0.19, y: 2.1, z: 1}
+  m_LocalScale: {x: 1.6601872, y: 1.4239719, z: 1}
   m_Children: []
   m_Father: {fileID: 460303446}
   m_RootOrder: 0
@@ -408,7 +408,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: f8b91b5d1a88efe4ab9fe389120aba76, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -430,7 +430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aada462a1a555714ca48a8c8c8d79d82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 3
 --- !u!50 &1121956745
 Rigidbody2D:
   serializedVersion: 4
@@ -497,7 +497,6 @@ GameObject:
   - component: {fileID: 1998648198}
   - component: {fileID: 1998648197}
   - component: {fileID: 1998648199}
-  - component: {fileID: 1998648201}
   - component: {fileID: 1998648200}
   m_Layer: 0
   m_Name: car_black_1
@@ -537,9 +536,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1832572787
+  m_SortingLayer: 1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 28524c6e822c9aa4f8cd4f420dfd5a61, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -557,8 +556,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1998648196}
   m_LocalRotation: {x: -0, y: -0.015222466, z: -0, w: 0.9998841}
-  m_LocalPosition: {x: -0.67, y: -1.95, z: 9.98}
-  m_LocalScale: {x: 2.405912, y: 2.4085507, z: 0.91199976}
+  m_LocalPosition: {x: -0.1, y: -5.8, z: 10}
+  m_LocalScale: {x: 3.9704826, y: 4.4609995, z: 0.91199976}
   m_Children: []
   m_Father: {fileID: 460303446}
   m_RootOrder: 1
@@ -570,7 +569,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1998648196}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -596,35 +595,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.5
   force: 5
---- !u!114 &1998648201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1998648196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 0
-    i1: 0
-    i2: 0
-    i3: 0
-    i4: 0
-    i5: 0
-    i6: 0
-    i7: 0
-    i8: 0
-    i9: 0
-    i10: 0
-    i11: 0
-    i12: 0
-    i13: 0
-    i14: 0
-    i15: 0
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
+  left: 32
+  right: 48
