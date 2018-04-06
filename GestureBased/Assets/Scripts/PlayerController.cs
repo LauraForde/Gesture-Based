@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Thalmic.Myo;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,13 +14,18 @@ public class PlayerController : MonoBehaviour {
     public KeyCode left;
     public KeyCode right;
 
+    public ThalmicMyo myo;
+
+    
+
 
     // Use this for initialization
     void Start () {
         myRigidBody = GetComponent<Rigidbody2D>();
 
+        myo = myo.GetComponent<ThalmicMyo>();
 
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -32,6 +38,7 @@ public class PlayerController : MonoBehaviour {
         }
         */
 
+        myo.accelerometer = new Vector2(speed, myo.accelerometer.y);
 
         if(isDead == false)
         {
@@ -49,6 +56,12 @@ public class PlayerController : MonoBehaviour {
             }
 
 
+
+
+
         }
+
 	}
+
+
 }

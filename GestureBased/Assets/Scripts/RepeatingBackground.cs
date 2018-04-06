@@ -2,26 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RepeatingBackground : MonoBehaviour {
+public class RepeatingBackground : MonoBehaviour
+{
 
     private BoxCollider2D bgCollder;
     private float bgVerticalLength;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
 
         bgCollder = GetComponent<BoxCollider2D>();
         bgVerticalLength = bgCollder.size.y;
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if(transform.position.y < -bgVerticalLength)
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (transform.position.y < -bgVerticalLength)
         {
             RepositionBackground();
         }
-	}
+    }
 
     private void RepositionBackground()
     {
