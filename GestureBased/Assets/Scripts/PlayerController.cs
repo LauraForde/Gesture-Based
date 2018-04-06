@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        myRigidBody.freezeRotation = true;
         ThalmicMyo thalmicMyo = myo.GetComponent<ThalmicMyo>();
 
         myRigidBody.velocity = new Vector2(speed, myRigidBody.velocity.y);
@@ -81,25 +82,42 @@ public class PlayerController : MonoBehaviour {
                 }
                 else if (thalmicMyo.pose == Pose.WaveIn)
                 {
+
+                myRigidBody.position = new Vector2(myRigidBody.position.x - 10, 0);
+
                   //  GetComponent<Renderer>().material = waveInMaterial;
-                    myRigidBody.velocity = new Vector2(+myRigidBody.transform.position.x, speed);
+                 /*   myRigidBody.velocity = new Vector2(+myRigidBody.transform.position.x, speed);
+                     thalmicMyo.accelerometer.x--;
+                thalmicMyo.gyroscope.x = 0;
+                thalmicMyo.gyroscope.y = 0;
+                thalmicMyo.gyroscope.z = 0;
+                thalmicMyo.accelerometer.z = 0;*/
+                //thalmicMyo.transform.rotation.x = 0;
 
                 ExtendUnlockAndNotifyUserAction(thalmicMyo);
                 }
                 else if (thalmicMyo.pose == Pose.WaveOut)
                 {
-                   // GetComponent<Renderer>().material = waveOutMaterial;
-                     myRigidBody.velocity = new Vector2(+myRigidBody.velocity.x, speed);
-            
 
-                    ExtendUnlockAndNotifyUserAction(thalmicMyo);
+                myRigidBody.position = new Vector2( myRigidBody.position.x + 10, 0);
+                /*
+
+                // GetComponent<Renderer>().material = waveOutMaterial;
+                myRigidBody.velocity = new Vector2(+myRigidBody.velocity.x, speed);
+                thalmicMyo.accelerometer.x++;
+                thalmicMyo.gyroscope.x = 0;
+                thalmicMyo.gyroscope.y = 0;
+                thalmicMyo.gyroscope.z = 0;
+                thalmicMyo.accelerometer.z = 0;*/
+
+                ExtendUnlockAndNotifyUserAction(thalmicMyo);
                 }
-                else if (thalmicMyo.pose == Pose.DoubleTap)
+               /* else if (thalmicMyo.pose == Pose.DoubleTap)
                 {
                     GetComponent<Renderer>().material = doubleTapMaterial;
 
                     ExtendUnlockAndNotifyUserAction(thalmicMyo);
-                }
+                }*/
             }
 
 
