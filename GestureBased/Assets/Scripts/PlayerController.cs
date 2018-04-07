@@ -20,8 +20,6 @@ public class PlayerController : MonoBehaviour {
     public KeyCode left;
     public KeyCode right;
 
-
-
     public Material waveInMaterial;
     public Material waveOutMaterial;
     public Material doubleTapMaterial;
