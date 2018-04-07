@@ -16,7 +16,7 @@ public class RoadGen : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (transform.position.x < genPoint.position.y) {
+		if (transform.position.y < genPoint.position.y) {
 			transform.position = new Vector3 (transform.position.x, transform.position.y + width, transform.position.z);
 			//Instantiate (platform, transform.position, transform.rotation);
 
