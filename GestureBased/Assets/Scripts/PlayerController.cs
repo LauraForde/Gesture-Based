@@ -24,6 +24,12 @@ public class PlayerController : MonoBehaviour {
     public Material waveOutMaterial;
     public Material doubleTapMaterial;
 
+
+    private Thalmic.Myo.Quaternion _myoQuaternion = null;
+    private Thalmic.Myo.Vector3 _myoAccelerometer = null;
+    private Thalmic.Myo.Vector3 _myoGyroscope = null;
+   
+
     private Pose _lastPose = Pose.Unknown;
 
 
@@ -36,6 +42,9 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        Input.gyro.enabled = false;
+
+        
 
         myRigidBody.freezeRotation = true;
         ThalmicMyo thalmicMyo = myo.GetComponent<ThalmicMyo>();
