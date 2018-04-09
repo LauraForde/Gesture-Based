@@ -54,22 +54,6 @@ public class PlayerController : MonoBehaviour {
 
         myRigidBody.velocity = new Vector2(speed, myRigidBody.velocity.y);
 
-        if (myRigidBody.position.x < -12.6)
-        {
-            print("fuck you");
-            // SceneManager.LoadScene();
-            SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
-           // cs.Play();
-
-            
-        }
-        else if(myRigidBody.position.x > 12.47)
-        {
-            print("fuck yoy right");
-            // SceneManager.LoadScene(cs.GameOver);
-            SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
-        }
-
        
 
             if (thalmicMyo.pose != _lastPose)
