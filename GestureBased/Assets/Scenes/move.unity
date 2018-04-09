@@ -874,8 +874,8 @@ GameObject:
   - component: {fileID: 1765875118}
   - component: {fileID: 1765875121}
   - component: {fileID: 1765875120}
-  - component: {fileID: 1765875119}
   - component: {fileID: 1765875122}
+  - component: {fileID: 1765875119}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -910,7 +910,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1765875117}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -941,8 +941,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 82ddb97654372dc4ca56e33b5432ef00, type: 3}
-        m_MethodName: 
+      - m_Target: {fileID: 1765875122}
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -995,10 +995,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1765875117}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82ddb97654372dc4ca56e33b5432ef00, type: 3}
+  m_Script: {fileID: 11500000, guid: 94d5c711c8419b04d8e939ca343551a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameOver: 
+  GameOver: GameOver
 --- !u!1 &1878676099
 GameObject:
   m_ObjectHideFlags: 0

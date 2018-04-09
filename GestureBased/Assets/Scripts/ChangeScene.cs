@@ -8,17 +8,6 @@ public class ChangeScene : MonoBehaviour
 {
     public string GameOver;
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     public void Play()
     {
         SceneManager.LoadScene(GameOver);
