@@ -1253,6 +1253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4631973203bc0cd47af9d22b7369b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cs: {fileID: 1765875122}
   myo: {fileID: 789471266}
   speed: 0
   force: 0

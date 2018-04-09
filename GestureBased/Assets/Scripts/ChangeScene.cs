@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    public string GameOver;
+    public string scene;
 
     public void Play()
     {
-        SceneManager.LoadScene(GameOver);
+        SceneManager.GetSceneByName(scene);
 
     }
 }
