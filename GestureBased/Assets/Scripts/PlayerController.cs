@@ -10,9 +10,11 @@ using VibrationType = Thalmic.Myo.VibrationType;
 using System;
 using UnityEngine.SceneManagement;
 
+
+
 public class PlayerController : MonoBehaviour {
 
-   
+    public ChangeScene cs;
     public GameObject myo = null;
     public float speed;
     public float force;
@@ -55,11 +57,17 @@ public class PlayerController : MonoBehaviour {
         if (myRigidBody.position.x < -12.6)
         {
             print("fuck you");
+            // SceneManager.LoadScene();
+            SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+           // cs.Play();
+
             
         }
         else if(myRigidBody.position.x > 12.47)
         {
             print("fuck yoy right");
+            // SceneManager.LoadScene(cs.GameOver);
+            SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
         }
 
        
@@ -81,14 +89,30 @@ public class PlayerController : MonoBehaviour {
                 {
 
                 myRigidBody.position = new Vector2(myRigidBody.position.x - 10, 0);
+                if (myRigidBody.position.x < -12.6)
+                {
+                    print("fuck you");
+                    // SceneManager.LoadScene();
+                   // cs.Play();
+                    SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+
+                }
 
                 ExtendUnlockAndNotifyUserAction(thalmicMyo);
                 }
                 else if (thalmicMyo.pose == Pose.WaveOut)
                 {
 
+              
+
                 myRigidBody.position = new Vector2( myRigidBody.position.x + 10, 0);
-                
+                if (myRigidBody.position.x > 12.47)
+                {
+                    print("fuck yoy right");
+                    // SceneManager.LoadScene(cs.GameOver);
+                   // cs.Play();
+                    SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+                }
 
                 ExtendUnlockAndNotifyUserAction(thalmicMyo);
                 }
