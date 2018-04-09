@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour {
 
         
 
-        myRigidBody.freezeRotation = true;
+       // myRigidBody.freezeRotation = true;
         ThalmicMyo thalmicMyo = myo.GetComponent<ThalmicMyo>();
 
         myRigidBody.velocity = new Vector2(speed, myRigidBody.velocity.y);
@@ -75,11 +75,9 @@ public class PlayerController : MonoBehaviour {
                 myRigidBody.position = new Vector2(myRigidBody.position.x - 10, 0);
                 if (myRigidBody.position.x < -12.6)
                 {
-                    print("fuck you");
-                    // SceneManager.LoadScene();
-                   // cs.Play();
+                  
                     SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
-
+                    DestroyObject(myRigidBody);
                 }
 
                 ExtendUnlockAndNotifyUserAction(thalmicMyo);
@@ -92,10 +90,9 @@ public class PlayerController : MonoBehaviour {
                 myRigidBody.position = new Vector2( myRigidBody.position.x + 10, 0);
                 if (myRigidBody.position.x > 12.47)
                 {
-                    print("fuck yoy right");
-                    // SceneManager.LoadScene(cs.GameOver);
-                   // cs.Play();
+                   
                     SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+                    DestroyObject(myRigidBody);
                 }
 
                 ExtendUnlockAndNotifyUserAction(thalmicMyo);
