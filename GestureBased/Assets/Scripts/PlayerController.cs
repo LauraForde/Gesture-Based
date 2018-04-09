@@ -8,10 +8,11 @@ using Pose = Thalmic.Myo.Pose;
 using UnlockType = Thalmic.Myo.UnlockType;
 using VibrationType = Thalmic.Myo.VibrationType;
 using System;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
-    // private bool isDead = false;
+   
     public GameObject myo = null;
     public float speed;
     public float force;
@@ -51,28 +52,17 @@ public class PlayerController : MonoBehaviour {
 
         myRigidBody.velocity = new Vector2(speed, myRigidBody.velocity.y);
 
-        /*if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+        if (myRigidBody.position.x < -12.6)
         {
-            myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, force);
+            print("fuck you");
+            
         }
-        */
-
-
-
-      /*  if(isDead == false)
+        else if(myRigidBody.position.x > 12.47)
         {
-            if (Input.GetKey(left))
-            {
-                myRigidBody.velocity = new Vector2(-myRigidBody.velocity.x, speed);
-            }
-            else if (Input.GetKey(right))
-            {
-                myRigidBody.velocity = new Vector2(+myRigidBody.velocity.x, speed);
-            }
-            else
-            {
-                myRigidBody.velocity = new Vector2(myRigidBody.velocity.y, speed);
-            }*/
+            print("fuck yoy right");
+        }
+
+       
 
             if (thalmicMyo.pose != _lastPose)
             {
@@ -92,30 +82,13 @@ public class PlayerController : MonoBehaviour {
 
                 myRigidBody.position = new Vector2(myRigidBody.position.x - 10, 0);
 
-                  //  GetComponent<Renderer>().material = waveInMaterial;
-                 /*   myRigidBody.velocity = new Vector2(+myRigidBody.transform.position.x, speed);
-                     thalmicMyo.accelerometer.x--;
-                thalmicMyo.gyroscope.x = 0;
-                thalmicMyo.gyroscope.y = 0;
-                thalmicMyo.gyroscope.z = 0;
-                thalmicMyo.accelerometer.z = 0;*/
-                //thalmicMyo.transform.rotation.x = 0;
-
                 ExtendUnlockAndNotifyUserAction(thalmicMyo);
                 }
                 else if (thalmicMyo.pose == Pose.WaveOut)
                 {
 
                 myRigidBody.position = new Vector2( myRigidBody.position.x + 10, 0);
-                /*
-
-                // GetComponent<Renderer>().material = waveOutMaterial;
-                myRigidBody.velocity = new Vector2(+myRigidBody.velocity.x, speed);
-                thalmicMyo.accelerometer.x++;
-                thalmicMyo.gyroscope.x = 0;
-                thalmicMyo.gyroscope.y = 0;
-                thalmicMyo.gyroscope.z = 0;
-                thalmicMyo.accelerometer.z = 0;*/
+                
 
                 ExtendUnlockAndNotifyUserAction(thalmicMyo);
                 }
@@ -141,7 +114,11 @@ public class PlayerController : MonoBehaviour {
 
         myo.NotifyUserAction();
     }
+
+  
 }
+
+
 
 
 
