@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour {
        // myRigidBody.freezeRotation = true;
         ThalmicMyo thalmicMyo = myo.GetComponent<ThalmicMyo>();
 
-        myRigidBody.velocity = new Vector2(speed, myRigidBody.velocity.y);
+        myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, speed);
 
        
 
