@@ -7,5 +7,7 @@ public class CarsGen : MonoBehaviour {
 	public ObjectPooler objPool;
 	public float distance;
 
-	public void EvilCar(Vector3 )
+	public void EvilCar(Vector3 ){
+		
+	}
 }
