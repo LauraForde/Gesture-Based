@@ -16,6 +16,14 @@ public class CarsGen : MonoBehaviour {
 		GameObject car = objPool.GetPooledObject ();
 		car.transform.position = make;
 		car.SetActive (true);
+
+        GameObject car1 = objPool.GetPooledObject ();
+		car1.transform.position = new Vector3(make.x - distance, make.y, make.z);
+		car1.SetActive (true);
+
+        GameObject car2 = objPool.GetPooledObject ();
+		car2.transform.position = new Vector3(make.x + distance, make.y, make.z);
+		car2.SetActive (true);
 	}
 
   /*

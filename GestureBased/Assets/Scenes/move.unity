@@ -497,7 +497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   genPoint: {fileID: 509829652}
   objPool: {fileID: 1989194574}
-  distance: 1
+  distance: 10
 --- !u!114 &724826174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -574,7 +574,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &871555692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -630,7 +630,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &875898179
 Transform:
   m_ObjectHideFlags: 0
