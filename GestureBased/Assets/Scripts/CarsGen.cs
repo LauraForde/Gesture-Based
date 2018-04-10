@@ -6,12 +6,19 @@ public class CarsGen : MonoBehaviour {
 
    // public ObjectPooler objPool;
    // public float distance;
-    public GameObject car;
+    //public GameObject car;
     public Transform genPoint;
     private float width;
     public ObjectPooler objPool;
+    public float distance;
 
-  
+    public void CarMaker(Vector3 make){
+		GameObject car = objPool.GetPooledObject ();
+		car.transform.position = make;
+		car.SetActive (true);
+	}
+
+  /*
 
 
     void Start()
@@ -35,6 +42,6 @@ public class CarsGen : MonoBehaviour {
             newCar.SetActive(true);
         }
     }
-
+*/
 
 }
