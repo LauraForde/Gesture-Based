@@ -8,24 +8,28 @@ public class YellowGen : MonoBehaviour {
 	public Transform genPoint;
 	public float distance;
 	private float width;
-	public float distanceMin;
-	public float distanceMax;
+	private float distanceMin = 20;
+	private float distanceMax = -30;
 	public ObjectPooler[] objPool;
 	private int select;
 	private float[] pWidth;
+	private float[] pLength;
 	private float minHeight;
 	public Transform max;
 	private float maxHeight;
 	public float heightChange;
 	private float change;
+	private Rigidbody2D rigid;
 
 	void Start () {
 		//width = platform.GetComponent<BoxCollider2D> ().size.x;
 
 		pWidth = new float[objPool.Length];
+		rigid = GetComponent<Rigidbody2D>();
 
 		for(int i = 0; i < objPool.Length; i++){
 			pWidth [i] = objPool[i].pooledObject.GetComponent<BoxCollider2D> ().size.x;
+			//pWidth [i] = objPool[i].pooledObject.GetComponent<BoxCollider2D> ().size.x;
 		}
 
 		minHeight = transform.position.y;
@@ -35,19 +39,21 @@ public class YellowGen : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+
+		rigid.velocity = new Vector2(rigid.velocity.x, rigid.velocity.y);
 		if (transform.position.y < genPoint.position.y) {
 
 			distance = Random.Range (distanceMin, distanceMax);
 			select = Random.Range (0, objPool.Length);
 
-			change = transform.position.x + Random.Range (heightChange, -heightChange);
+			change = transform.position.y + Random.Range (-heightChange, heightChange);
 
 			if (change > maxHeight) {
 				change = maxHeight;
 			} else if (change < minHeight) {
 				change = minHeight;
 			}
-			transform.position = new Vector3 (change, + transform.position.y + (pWidth[select] / 2) + distance, transform.position.z);
+			transform.position = new Vector3 (change, transform.position.y + (pWidth[select] / 2) - distance, transform.position.z);
 			//Instantiate (randPlatform[select], transform.position, transform.rotation);
 
 			GameObject newPlat = objPool[select].GetPooledObject();
@@ -56,7 +62,8 @@ public class YellowGen : MonoBehaviour {
 			newPlat.transform.rotation = transform.rotation;
 			newPlat.SetActive (true);
 
-			transform.position = new Vector3 (transform.position.x, transform.position.x + (pWidth[select] / 2), transform.position.z);
+			
+			transform.position = new Vector3 (transform.position.x, transform.position.y + (pWidth[select] / 2), transform.position.z);
 		}
 
 	}
