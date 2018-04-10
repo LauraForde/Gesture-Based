@@ -6,12 +6,32 @@ public class CarSpawn: MonoBehaviour {
     public GameObject car;
     public float delayTimer = 0.5f;
     float timer;
+    private float nextDrop = 0f;
+    private float dropInterval = 10f;
+    private float changeInterval = 30f;
 
-    void Start (){
+   /* void Start (){
         timer = delayTimer;
+    }*/
+
+    void Update(){
+        if(Time.time >= nextDrop)
+        {
+            Spawn();
+            nextDrop += dropInterval;
+
+            if(Time.time >= changeInterval){
+                if(dropInterval > 1f){
+                    dropInterval *= 0.75f;
+                }
+                else{
+                    dropInterval = 1f;
+                }
+            }
+        }    
     }
 
-    void OnTriggerEnter2D(){
+    void Spawn(){
         timer -= Time.deltaTime;
 
         if(timer <= 0){
