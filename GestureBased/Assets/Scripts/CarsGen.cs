@@ -10,8 +10,8 @@ public class CarsGen : MonoBehaviour {
     /*public void EvilCar(Vector3 ){
 		
 	}*/
-    float carMax = 0.6f; // Maximum height a cloud pair can be set to 
-    float carMin = -0.35f; // Minimum height
+    float carMax = 0.6f; 
+    float carMin = -0.35f;
 
   
     void Start()
@@ -21,9 +21,9 @@ public class CarsGen : MonoBehaviour {
         
         foreach (GameObject car in cars)
         { 
-            Vector3 pos = car.transform.position; //current position
-            pos.y = Random.Range(carMin, carMax); // Set the new position to a random range between min / max set above
-            car.transform.position = pos; // move the first tile to the new position
+            Vector3 pos = car.transform.position; 
+            pos.y = Random.Range(carMin, carMax); 
+            car.transform.position = pos; 
         }
     }
   
