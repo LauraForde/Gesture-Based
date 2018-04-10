@@ -8,7 +8,7 @@ public class CarSpawn: MonoBehaviour {
     float timer;
     private float nextDrop = 0f;
     private float dropInterval = 10f;
-    private float changeInterval = 30f;
+    private float changeInterval = 5f;
 
    /* void Start (){
         timer = delayTimer;
@@ -22,7 +22,7 @@ public class CarSpawn: MonoBehaviour {
 
             if(Time.time >= changeInterval){
                 if(dropInterval > 1f){
-                    dropInterval *= 0.75f;
+                    dropInterval *= 0.5f;
                 }
                 else{
                     dropInterval = 1f;

@@ -6,7 +6,7 @@ public class CarsGen : MonoBehaviour {
 
    // public ObjectPooler objPool;
    // public float distance;
-    //public GameObject car;
+    public GameObject car;
     public Transform genPoint;
     private float width;
     public ObjectPooler objPool;
@@ -16,20 +16,12 @@ public class CarsGen : MonoBehaviour {
 		GameObject car = objPool.GetPooledObject ();
 		car.transform.position = make;
 		car.SetActive (true);
-
-        GameObject car1 = objPool.GetPooledObject ();
-		car1.transform.position = new Vector3(make.x - distance, make.y, make.z);
-		car1.SetActive (true);
-
-        GameObject car2 = objPool.GetPooledObject ();
-		car2.transform.position = new Vector3(make.x + distance, make.y, make.z);
-		car2.SetActive (true);
 	}
 
-  /*
+  
 
 
-    void Start()
+   /* void Start()
     {
         
             width = car.GetComponent<BoxCollider2D>().size.y;
@@ -49,7 +41,7 @@ public class CarsGen : MonoBehaviour {
             newCar.transform.rotation = transform.rotation;
             newCar.SetActive(true);
         }
-    }
-*/
+    }*/
+
 
 }
