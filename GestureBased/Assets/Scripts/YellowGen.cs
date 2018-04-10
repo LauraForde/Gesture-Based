@@ -33,38 +33,43 @@ public class YellowGen : MonoBehaviour {
 		}
 
 		minHeight = transform.position.y;
-		maxHeight = max.position.y;
+		//maxHeight = max.position.y;
 
 	}
 
 	// Update is called once per frame
 	void Update () {
 
-		rigid.velocity = new Vector2(rigid.velocity.x, rigid.velocity.y);
-		if (transform.position.y < genPoint.position.y) {
+        rigid.velocity = new Vector2(rigid.velocity.x, rigid.velocity.y);
+        
 
-			distance = Random.Range (distanceMin, distanceMax);
-			select = Random.Range (0, objPool.Length);
+           // rigid.velocity = new Vector2(rigid.velocity.x, rigid.velocity.y);
+            if (transform.position.y < genPoint.position.y) {
 
-			change = transform.position.y + Random.Range (-heightChange, heightChange);
+                distance = Random.Range (distanceMin, distanceMax);
+                select = Random.Range (0, objPool.Length);
 
-			if (change > maxHeight) {
-				change = maxHeight;
-			} else if (change < minHeight) {
-				change = minHeight;
-			}
-			transform.position = new Vector3 (change, transform.position.y + (pWidth[select] / 2) - distance, transform.position.z);
-			//Instantiate (randPlatform[select], transform.position, transform.rotation);
+                change = transform.position.y + Random.Range (-heightChange, heightChange);
 
-			GameObject newPlat = objPool[select].GetPooledObject();
+                if (change > maxHeight) {
+                    change = maxHeight;
+                } else if (change < minHeight) {
+                    change = minHeight;
+                }
+                transform.position = new Vector3 (change, transform.position.y + (pWidth[select] / 2) - distance, transform.position.z);
+                //Instantiate (randPlatform[select], transform.position, transform.rotation);
 
-			newPlat.transform.position = transform.position;
-			newPlat.transform.rotation = transform.rotation;
-			newPlat.SetActive (true);
+                GameObject newPlat = objPool[select].GetPooledObject();
 
-			
-			transform.position = new Vector3 (transform.position.x, transform.position.y + (pWidth[select] / 2), transform.position.z);
-		}
+                newPlat.transform.position = transform.position;
+                newPlat.transform.rotation = transform.rotation;
+                newPlat.SetActive (true);
 
-	}
+
+                transform.position = new Vector3 (Random.Range(-10.0f, 10.0f), transform.position.y + (pWidth[select] / 2), transform.position.z);
+
+
+        }
+
+        }
 }

@@ -371,7 +371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pooledObject: {fileID: 1758067037084600, guid: 9ee6c2bd540f2ae4ba8275768c0a5160,
     type: 2}
-  pooledAmount: 20
+  pooledAmount: 2
 --- !u!1 &560688130
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,7 +676,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platform: {fileID: 1701406899800590, guid: c2885984da4b4cd48a008cdf3c02e8ae, type: 2}
   genPoint: {fileID: 875898179}
-  distance: 10
+  distance: 0
   objPool:
   - {fileID: 1399937603}
   - {fileID: 532550959}
@@ -714,7 +714,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 0
 --- !u!1 &875898178
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,7 +871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pooledObject: {fileID: 1701406899800590, guid: c2885984da4b4cd48a008cdf3c02e8ae,
     type: 2}
-  pooledAmount: 20
+  pooledAmount: 2
 --- !u!1 &1447046003
 GameObject:
   m_ObjectHideFlags: 0
