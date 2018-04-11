@@ -9,13 +9,13 @@ public class RoadGen : MonoBehaviour {
 	private float width;
 	public ObjectPooler objPool;
 
-	private YellowGen carGen;
-	public float randCar;
+	//private YellowGen carGen;
+	//public float randCar;
 
 	// Use this for initialization
 	void Start () {
 		width = road.GetComponent<BoxCollider2D>().size.y;
-		carGen = FindObjectOfType<YellowGen>();
+		//carGen = FindObjectOfType<YellowGen>();
 	
 	}
 	

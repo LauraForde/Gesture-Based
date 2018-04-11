@@ -9,13 +9,19 @@ public class CarSpawn : MonoBehaviour {
 	List<GameObject> pooledObjects;
 
 	// Use this for initialization
-	void Start () {
+	 void Start () {
 
+        // Populating the list of pooledObjects
 		pooledObjects = new List<GameObject>();	
+
+        // While i is less than the pooledAmount
 		for(int i = 0; i < pooledAmount; i++)
         {
+            // Make a new game object of that pooled object
             GameObject obj = (GameObject)Instantiate(pooledObject);
+            // Don't have it showing on screen
             obj.SetActive(false);
+
             pooledObjects.Add(obj);
         }	
 	}
@@ -37,6 +43,6 @@ public class CarSpawn : MonoBehaviour {
             }
         }
 
-        return null;
+                return null;
     }
 }
