@@ -2,44 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CarSpawn: MonoBehaviour {
-    public GameObject car;
-    public float delayTimer = 5f;
-    float timer = 10.0f;
-    private float nextDrop = 0f;
-    private float dropInterval = 20f;
-    private float changeInterval = 5f;
+public class CarSpawn : MonoBehaviour {
 
-   /* void Start (){
-        timer = delayTimer;
-    }*/
+	public GameObject pooledObject;
+	public int pooledAmount = 2;
+	List<GameObject> pooledObjects;
 
-    void Update(){
-          
-    }
+	// Use this for initialization
+	void Start () {
 
-    void Spawn(){
-        timer -= Time.deltaTime;
-
-        if(timer <= 0.0f){
-            Instantiate(car, transform.position, transform.rotation);
-           // transform.position += new Vector3(0.0f, dropInterval * Time.deltaTime, 0.0f);
-            timer = delayTimer;
-
-            if(Time.time >= nextDrop)
+		pooledObjects = new List<GameObject>();	
+		for(int i = 0; i < pooledAmount; i++)
         {
-            //Spawn();
-            nextDrop += dropInterval;
-
-            if(Time.time >= changeInterval){
-                if(dropInterval > 20f){
-                    dropInterval *= 10f;
-                }
-                else{
-                    dropInterval = 20f;
-                }
+            GameObject obj = (GameObject)Instantiate(pooledObject);
+            obj.SetActive(false);
+            pooledObjects.Add(obj);
+        }	
+	}
+	
+	public GameObject GetPooledObject()
+    {
+        for(int i = 0; i < pooledObjects.Count; i++)
+        {
+            if (!pooledObjects[i] == null)
+            {
+                GameObject obj = (GameObject)Instantiate(pooledObject);
+                obj.SetActive(false);
+                pooledObjects[i] = obj;
+                return pooledObjects[i];
             }
-        }  
+
+            if(!pooledObjects[i].activeInHierarchy){
+                return pooledObjects[i];
+            }
         }
+
+        return null;
     }
 }

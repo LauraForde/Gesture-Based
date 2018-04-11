@@ -22,11 +22,11 @@ public class YellowGen : MonoBehaviour {
 	private Rigidbody2D rigid;
 
 	public GameObject car;
-	public float delayTimer = 5f;
+	public float delayTimer = 1f;
     float timer = 10.0f;
     private float nextDrop = 0f;
-    private float dropInterval = 20f;
-    private float changeInterval = 5f;
+    private float dropInterval = 5f;
+    private float changeInterval = 1f;
 
 
 	void Start () {
@@ -50,7 +50,7 @@ public class YellowGen : MonoBehaviour {
 
         rigid.velocity = new Vector2(rigid.velocity.x, rigid.velocity.y);
         
-		//Spawn();
+		Spawn();
            // rigid.velocity = new Vector2(rigid.velocity.x, rigid.velocity.y);
             if (transform.position.y < genPoint.position.y) {
 
@@ -81,7 +81,7 @@ public class YellowGen : MonoBehaviour {
 
         }
 
-	/*	void Spawn(){
+		void Spawn(){
         timer -= Time.deltaTime;
 
         if(timer <= 0.0f){
@@ -97,13 +97,13 @@ public class YellowGen : MonoBehaviour {
 
             if(Time.time >= changeInterval){
                 if(dropInterval > 20f){
-                    dropInterval *= 10f;
+                    dropInterval *= 1f;
                 }
                 else{
-                    dropInterval = 20f;
+                    dropInterval = 5f;
                 }
             }
         }  
         }
-    }*/
+    }
 }
