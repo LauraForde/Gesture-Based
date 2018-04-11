@@ -20,7 +20,12 @@ from left to right in order to avoid the oncoming game generated cars for the ga
 
 
 ## Hardware Used in Creating The Application  
-> ### Myo Connect
+> ### Myo 
+> Myo armband is manufactured by Thalmic Labs and is a device in which is worn on the forearm.
+> It uses a set of electromyographic (EMG) sensors that sense electrical activity iin the forearm muscles. 
+> The myo using the EMG sensors then translates the electrical activity from the muscles into computer commands.
+> The EMG sensors combined with a gyroscope, accelometer and magnetometer, recognizes gestures made by the user
+> to do certain tasks on the device it is connected to.  
 
 > ### Unity
 > Unity, developed by Unity Technologies is a cross platform game engine used to develop two-dimensional and 
