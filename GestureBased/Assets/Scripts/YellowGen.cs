@@ -15,11 +15,19 @@ public class YellowGen : MonoBehaviour {
 	private float[] pWidth;
 	private float[] pLength;
 	private float minHeight;
-	public Transform max;
+	//public Transform max;
 	private float maxHeight;
 	public float heightChange;
 	private float change;
 	private Rigidbody2D rigid;
+
+	public GameObject car;
+	public float delayTimer = 5f;
+    float timer = 10.0f;
+    private float nextDrop = 0f;
+    private float dropInterval = 20f;
+    private float changeInterval = 5f;
+
 
 	void Start () {
 		//width = platform.GetComponent<BoxCollider2D> ().size.x;
@@ -32,8 +40,8 @@ public class YellowGen : MonoBehaviour {
 			//pWidth [i] = objPool[i].pooledObject.GetComponent<BoxCollider2D> ().size.x;
 		}
 
-		minHeight = transform.position.y;
-		//maxHeight = max.position.y;
+		minHeight = transform.position.x;
+	//	maxHeight = max.position.x;
 
 	}
 
@@ -42,7 +50,7 @@ public class YellowGen : MonoBehaviour {
 
         rigid.velocity = new Vector2(rigid.velocity.x, rigid.velocity.y);
         
-
+		//Spawn();
            // rigid.velocity = new Vector2(rigid.velocity.x, rigid.velocity.y);
             if (transform.position.y < genPoint.position.y) {
 
@@ -66,10 +74,36 @@ public class YellowGen : MonoBehaviour {
                 newPlat.SetActive (true);
 
 
-                transform.position = new Vector3 (Random.Range(-10.0f, 10.0f), transform.position.y + (pWidth[select] / 2), transform.position.z);
+                transform.position = new Vector3 (Random.Range(-20.0f, 20.0f), transform.position.y + (pWidth[select] / 2), transform.position.z);
 
 
         }
 
         }
+
+	/*	void Spawn(){
+        timer -= Time.deltaTime;
+
+        if(timer <= 0.0f){
+            Instantiate(car, transform.position, transform.rotation);
+           // 
+		   transform.position += new Vector3(0.0f, dropInterval * Time.deltaTime, 0.0f);
+            timer = delayTimer;
+
+            if(Time.time >= nextDrop)
+        {
+            //Spawn();
+            nextDrop += dropInterval;
+
+            if(Time.time >= changeInterval){
+                if(dropInterval > 20f){
+                    dropInterval *= 10f;
+                }
+                else{
+                    dropInterval = 20f;
+                }
+            }
+        }  
+        }
+    }*/
 }

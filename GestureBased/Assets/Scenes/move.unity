@@ -351,7 +351,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532550956}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5545af767e9ea84ab86fb0b1c93a590, type: 3}
   m_Name: 
@@ -371,7 +371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pooledObject: {fileID: 1758067037084600, guid: 9ee6c2bd540f2ae4ba8275768c0a5160,
     type: 2}
-  pooledAmount: 2
+  pooledAmount: 1
 --- !u!1 &560688130
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,12 +676,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platform: {fileID: 1701406899800590, guid: c2885984da4b4cd48a008cdf3c02e8ae, type: 2}
   genPoint: {fileID: 875898179}
-  distance: 0
+  distance: 3
   objPool:
   - {fileID: 1399937603}
   - {fileID: 532550959}
-  max: {fileID: 875898179}
   heightChange: 10
+  car: {fileID: 1701406899800590, guid: c2885984da4b4cd48a008cdf3c02e8ae, type: 2}
+  delayTimer: 5
 --- !u!4 &871555694
 Transform:
   m_ObjectHideFlags: 0
@@ -739,7 +740,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 875898178}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5, y: 21.3, z: 0}
+  m_LocalPosition: {x: -9.9, y: 32.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 460303446}
@@ -851,7 +852,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1399937600}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5545af767e9ea84ab86fb0b1c93a590, type: 3}
   m_Name: 
@@ -871,7 +872,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pooledObject: {fileID: 1701406899800590, guid: c2885984da4b4cd48a008cdf3c02e8ae,
     type: 2}
-  pooledAmount: 2
+  pooledAmount: 1
 --- !u!1 &1447046003
 GameObject:
   m_ObjectHideFlags: 0

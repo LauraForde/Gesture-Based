@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class CarSpawn: MonoBehaviour {
     public GameObject car;
-    public float delayTimer = 0.5f;
-    float timer;
+    public float delayTimer = 5f;
+    float timer = 10.0f;
     private float nextDrop = 0f;
-    private float dropInterval = 10f;
+    private float dropInterval = 20f;
     private float changeInterval = 5f;
 
    /* void Start (){
@@ -15,28 +15,31 @@ public class CarSpawn: MonoBehaviour {
     }*/
 
     void Update(){
-        if(Time.time >= nextDrop)
-        {
-            Spawn();
-            nextDrop += dropInterval;
-
-            if(Time.time >= changeInterval){
-                if(dropInterval > 1f){
-                    dropInterval *= 0.5f;
-                }
-                else{
-                    dropInterval = 1f;
-                }
-            }
-        }    
+          
     }
 
     void Spawn(){
         timer -= Time.deltaTime;
 
-        if(timer <= 0){
+        if(timer <= 0.0f){
             Instantiate(car, transform.position, transform.rotation);
+           // transform.position += new Vector3(0.0f, dropInterval * Time.deltaTime, 0.0f);
             timer = delayTimer;
+
+            if(Time.time >= nextDrop)
+        {
+            //Spawn();
+            nextDrop += dropInterval;
+
+            if(Time.time >= changeInterval){
+                if(dropInterval > 20f){
+                    dropInterval *= 10f;
+                }
+                else{
+                    dropInterval = 20f;
+                }
+            }
+        }  
         }
     }
 }
