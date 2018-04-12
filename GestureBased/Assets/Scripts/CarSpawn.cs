@@ -4,45 +4,21 @@ using UnityEngine;
 
 public class CarSpawn : MonoBehaviour {
 
-	public GameObject pooledObject;
-	public int pooledAmount = 2;
-	List<GameObject> pooledObjects;
+	public GameObject[] cars;
+	public Transform[] spawn;
+    float delayTime = 2.0f;
 
 	// Use this for initialization
 	 void Start () {
 
-        // Populating the list of pooledObjects
-		pooledObjects = new List<GameObject>();	
-
-        // While i is less than the pooledAmount
-		for(int i = 0; i < pooledAmount; i++)
-        {
-            // Make a new game object of that pooled object
-            GameObject obj = (GameObject)Instantiate(pooledObject);
-            // Don't have it showing on screen
-            obj.SetActive(false);
-
-            pooledObjects.Add(obj);
-        }	
+        InvokeRepeating("Spawn", delayTime, 0.5f);	
 	}
 	
-	public GameObject GetPooledObject()
+	void Spawn()
     {
-        for(int i = 0; i < pooledObjects.Count; i++)
-        {
-            if (!pooledObjects[i] == null)
-            {
-                GameObject obj = (GameObject)Instantiate(pooledObject);
-                obj.SetActive(false);
-                pooledObjects[i] = obj;
-                return pooledObjects[i];
-            }
+        int spawnIndex = Random.Range(0, spawn.Length);
+        int carsIndex = Random.Range(0, cars.Length);
 
-            if(!pooledObjects[i].activeInHierarchy){
-                return pooledObjects[i];
-            }
-        }
-
-                return null;
+        Instantiate(cars[carsIndex], spawn[spawnIndex].position, spawn[spawnIndex].rotation);
     }
 }
