@@ -14,6 +14,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
+    
     public ChangeScene cs;
     public GameObject myo = null;
     public float speed;
@@ -27,18 +28,14 @@ public class PlayerController : MonoBehaviour {
     public Material waveOutMaterial;
     public Material doubleTapMaterial;
 
-
-    private Thalmic.Myo.Quaternion _myoQuaternion = null;
-    private Thalmic.Myo.Vector3 _myoAccelerometer = null;
-    private Thalmic.Myo.Vector3 _myoGyroscope = null;
-   
-
     private Pose _lastPose = Pose.Unknown;
 
+   
 
     // Use this for initialization
     void Start () {
         myRigidBody = GetComponent<Rigidbody2D>();
+      
 
         //ThalmicMyo thalmicMyo = myo.GetComponent<ThalmicMyo>();
     }
@@ -47,9 +44,7 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
         Input.gyro.enabled = false;
 
-        
-
-       // myRigidBody.freezeRotation = true;
+        // myRigidBody.freezeRotation = true;
         ThalmicMyo thalmicMyo = myo.GetComponent<ThalmicMyo>();
 
         myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, speed);
@@ -72,7 +67,8 @@ public class PlayerController : MonoBehaviour {
                 else if (thalmicMyo.pose == Pose.WaveIn)
                 {
 
-                myRigidBody.position = new Vector2(myRigidBody.position.x - 10, 0);
+             
+                myRigidBody.position = new Vector2(myRigidBody.position.x - 10, myRigidBody.position.y );
                 if (myRigidBody.position.x < -12.6)
                 {
                   
@@ -85,9 +81,9 @@ public class PlayerController : MonoBehaviour {
                 else if (thalmicMyo.pose == Pose.WaveOut)
                 {
 
-              
+                
 
-                myRigidBody.position = new Vector2( myRigidBody.position.x + 10, 0);
+                myRigidBody.position = new Vector2( myRigidBody.position.x + 10, myRigidBody.position.y);
                 if (myRigidBody.position.x > 12.47)
                 {
                    
