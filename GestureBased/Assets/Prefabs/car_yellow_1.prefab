@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4807549949712736}
   - component: {fileID: 212441040784755072}
-  - component: {fileID: 50658946771430110}
   - component: {fileID: 61756249473578596}
   - component: {fileID: 114229625301252480}
+  - component: {fileID: 114323345770734086}
   m_Layer: 0
   m_Name: car_yellow_1
   m_TagString: Untagged
@@ -43,26 +43,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50658946771430110
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1701406899800590}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 1
 --- !u!61 &61756249473578596
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -100,6 +80,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyPoint: {fileID: 0}
+--- !u!114 &114323345770734086
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1701406899800590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22ebd1fdc5f2e7641ba1d7d74e1f0055, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212441040784755072
 SpriteRenderer:
   m_ObjectHideFlags: 1
