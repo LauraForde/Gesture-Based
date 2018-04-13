@@ -13,8 +13,9 @@ speeding whilst dodging cars. If the users car collides with a computer generate
 ## Gestures Identified as Apropriate For This Application  
 For our application we decided that hand gestures would be best suited.
 
-Using the Myo connect the user controls the car by usinng some of the gestures familiar to the myo.
-Myo Connect has various hand gestures it recognizes along with the accelerometer and the gyroscope.
+Using the Myo connect the user controls the car by using some of the gestures familiar to the myo.
+Myo Connect has various hand gestures it recognizes along with the accelerometer and the gyroscope. The following image shows the 
+gestures that the Myo responed to: ![gestures](https://user-images.githubusercontent.com/15687193/38718413-e1dedcfa-3ee4-11e8-971c-5f4acfe5db49.png "Myo Gestures")
 However for our application we are using the "wave-in" and "wave-out" gestures to move the car
 from left to right in order to avoid the oncoming game generated cars for the game to continue.
 

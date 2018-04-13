@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Car
   - Road
+  - Gem
   layers:
   - Default
   - TransparentFX
