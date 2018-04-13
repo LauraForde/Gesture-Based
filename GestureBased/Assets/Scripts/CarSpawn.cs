@@ -6,12 +6,12 @@ public class CarSpawn : MonoBehaviour {
 
 	public GameObject[] cars;
 	public Transform[] spawn;
-    float delayTime = 2.0f;
+    float delayTime = 5f;
 
 	// Use this for initialization
 	 void Start () {
 
-        InvokeRepeating("Spawn", delayTime, 0.5f);	
+        InvokeRepeating("Spawn", delayTime, 3f);	
 	}
 	
 	void Spawn()
