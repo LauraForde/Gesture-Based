@@ -421,6 +421,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 678947302}
+  - component: {fileID: 678947303}
   m_Layer: 0
   m_Name: DestroyPoint
   m_TagString: Untagged
@@ -442,6 +443,31 @@ Transform:
   m_Father: {fileID: 460303446}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &678947303
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 678947301}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.13, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 24.57, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &681540876
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,7 +570,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -358.7, y: 106}
+  m_AnchoredPosition: {x: -376.5, y: 3.7}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &734903365
@@ -764,7 +790,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -358.8, y: 36.500008}
+  m_AnchoredPosition: {x: -376.59998, y: -65.8}
   m_SizeDelta: {x: 160, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1381321554
@@ -1067,6 +1093,8 @@ MonoBehaviour:
   cars:
   - {fileID: 1758067037084600, guid: 9ee6c2bd540f2ae4ba8275768c0a5160, type: 2}
   - {fileID: 1701406899800590, guid: c2885984da4b4cd48a008cdf3c02e8ae, type: 2}
+  - {fileID: 1460818632122934, guid: 16f7b042a01ccdf48a0c6f381c43be21, type: 2}
+  - {fileID: 1540072720436554, guid: 601ff3ae67b2efa4d97baa4f8ceda68b, type: 2}
   spawn:
   - {fileID: 1244030453}
   - {fileID: 509829652}
@@ -1202,7 +1230,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1998648196}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 2, z: 0}
+  m_LocalPosition: {x: -9.7, y: 4.8, z: 0}
   m_LocalScale: {x: 4, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 789471268}
@@ -1336,6 +1364,10 @@ Prefab:
         type: 2}
       propertyPath: m_CollisionDetection
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1029513554655606, guid: 4324e3bb895186c42afbe4c41228849a, type: 2}
+      propertyPath: m_TagString
+      value: Road
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4324e3bb895186c42afbe4c41228849a, type: 2}
