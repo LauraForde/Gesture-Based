@@ -48,3 +48,6 @@ The architecture for this project is simply Unity and Myo working together. We w
 
 ## Conclusions & Recommendations  
 We both enjoyed using Unity and Myo. At times Myo can be hard to work with, it doesn't pick up gestures or it picks up things you're not actually doing. This was a learning experience for both of us as neither of us had worked with Myo before and Riona was using Unity for the first time. We both really enjoyed our time creating this project and trying to get to working the way we wished.
+
+## Demo
+https://youtu.be/YvhMmcLGni0
