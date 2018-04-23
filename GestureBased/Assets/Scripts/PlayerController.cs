@@ -59,8 +59,8 @@ public class PlayerController : MonoBehaviour {
                 if (thalmicMyo.pose == Pose.Fist)
                 {
                     thalmicMyo.Vibrate(VibrationType.Medium);
-
-                    ExtendUnlockAndNotifyUserAction(thalmicMyo);
+               
+                ExtendUnlockAndNotifyUserAction(thalmicMyo);
 
                     // Change material when wave in, wave out or double tap poses are made.
                 }
@@ -71,9 +71,9 @@ public class PlayerController : MonoBehaviour {
                 myRigidBody.position = new Vector2(myRigidBody.position.x - 10, myRigidBody.position.y );
                 if (myRigidBody.position.x < -12.6)
                 {
-                  
-                    SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
                     DestroyObject(myRigidBody);
+                    SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+                  
                 }
 
                 ExtendUnlockAndNotifyUserAction(thalmicMyo);
@@ -86,9 +86,9 @@ public class PlayerController : MonoBehaviour {
                 myRigidBody.position = new Vector2( myRigidBody.position.x + 10, myRigidBody.position.y);
                 if (myRigidBody.position.x > 12.47)
                 {
-                   
-                    SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
                     DestroyObject(myRigidBody);
+                    SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+                    
                 }
 
                 ExtendUnlockAndNotifyUserAction(thalmicMyo);
