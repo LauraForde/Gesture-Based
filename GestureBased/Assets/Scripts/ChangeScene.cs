@@ -22,23 +22,24 @@ public class ChangeScene : MonoBehaviour
 
     public void Play()
     {
+        //SceneManager.LoadScene("move", LoadSceneMode.Single);
+    
+    
+       // DontDestroyOnLoad(this);
+
         SceneManager.LoadScene("move", LoadSceneMode.Single);
-    
-    
-        DontDestroyOnLoad(this);
-      
-      //  SceneManager.LoadScene("move", LoadSceneMode.Single);
 
 
     }
     public void Home()
     {
-
+       
         Application.Quit();
       
     
 
     }
+
 
 
     void ExtendUnlockAndNotifyUserAction(ThalmicMyo myo)

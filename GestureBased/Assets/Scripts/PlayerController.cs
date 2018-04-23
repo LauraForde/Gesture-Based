@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour {
 
     private Pose _lastPose = Pose.Unknown;
 
-   
+    public ScoreManager sc;
 
     // Use this for initialization
     void Start () {
