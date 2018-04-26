@@ -32,11 +32,11 @@ public class GameManager : MonoBehaviour {
 		playerGen.gameObject.SetActive(false);
 		yield return new WaitForSeconds (0.5f);
 
-		destroy = FindObjectsOfType<Destroyer> ();
+		/*destroy = FindObjectsOfType<Destroyer> ();
 		for(int i = 0; i < destroy.Length; i++){
 			destroy [i].gameObject.SetActive (false);
-		}
-
+		}*/
+        playerGen.transform.position = playerStart;
 		roadGen.position = roadStart;
 		playerGen.gameObject.SetActive(true);
 	}
