@@ -17,25 +17,10 @@ public class ChangeScene : MonoBehaviour
 
     public void Play()
     {
-      
-
         SceneManager.LoadScene("move", LoadSceneMode.Single);
-
-
     }
-    public void Home()
+    public void Quit()
     {
-
         Application.Quit();
-
-
-
     }
-
-
-
-   
-
-
-
 }

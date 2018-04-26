@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour {
     public Material waveOutMaterial;
     public Material doubleTapMaterial;
     public GameObject gameOver;
- 
+	public GemSpawn gem;
 
     private Pose _lastPose = Pose.Unknown;
 
@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour {
                     {
                   //  DestroyObject(myRigidBody.gameObject);
                      gameOver.gameObject.SetActive(true);
-                   
+					Destroy(myRigidBody);
                   
 
                 }
@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour {
                 {
                     // DestroyObject(myRigidBody);
                     gameOver.gameObject.SetActive(true);
-                   
+					Destroy(myRigidBody);
 
                 }
                     // SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
@@ -100,12 +100,12 @@ public class PlayerController : MonoBehaviour {
             }
 
 
-    void OnCollisionEnter2D(Collision2D car)
+    void OnTriggerEnter2D(Collider2D car)
     {
         if (car.gameObject.tag == "Car")
         {
-            manager.Restart();
-           
+			gameOver.gameObject.SetActive (true);
+			Destroy(myRigidBody);
         }
     }
 
