@@ -6,11 +6,11 @@ public class ObjectPooler : MonoBehaviour {
 
 	public GameObject pooledObject;
 	public int pooledAmount;
+	// Making a list of pooled objects, for cars
 	List<GameObject> pooledObjects;
 
 	// Use this for initialization
 	void Start () {
-
 		pooledObjects = new List<GameObject>();	
 		for(int i = 0; i < pooledAmount; i++)
         {
@@ -19,7 +19,8 @@ public class ObjectPooler : MonoBehaviour {
             pooledObjects.Add(obj);
         }	
 	}
-	
+
+	// Method for calling different objects in the array
 	public GameObject GetPooledObject()
     {
         for(int i = 0; i < pooledObjects.Count; i++)

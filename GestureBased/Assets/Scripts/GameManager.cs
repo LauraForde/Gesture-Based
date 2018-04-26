@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		// If the user presses the E key quit the game
 		if(Input.GetKeyDown(KeyCode.E)){
 			SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
 		}
@@ -27,10 +27,9 @@ public class GameManager : MonoBehaviour {
 		StartCoroutine ("RestartCo");
 	}
 	public IEnumerator RestartCo(){
+		// Remove the player gen point
 		playerGen.gameObject.SetActive(false);
 		yield return new WaitForSeconds (0.5f);
-
-	
         playerGen.transform.position = playerStart;
 		roadGen.position = roadStart;
 		playerGen.gameObject.SetActive(true);

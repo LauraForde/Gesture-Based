@@ -8,11 +8,10 @@ public class Destroyer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		// Find the destroy point
         destroyPoint = GameObject.Find("DestroyPoint");
 		
 	}
-	
 
     void OnCollisionEnter2D(Collision2D other){
         if(other.gameObject.name == "Gem"){

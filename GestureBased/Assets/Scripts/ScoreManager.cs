@@ -11,11 +11,13 @@ public class ScoreManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		// Updating the score count and the final score count
 		scoreText.text = "Score: " + scoreCount;
 		finalScore.text = "You Scored: " + scoreCount;
 	}
 
 	public void ScoreAdd(int score){
+		// Adding to the score
 		scoreCount += score;
 	}
 
