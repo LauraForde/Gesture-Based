@@ -11,7 +11,7 @@ public class GemSpawn : MonoBehaviour {
 
 	// Use this for initialization
 	 void Start () {
-		//sm = FindObjectOfType<ScoreManager>();
+	
         InvokeRepeating("Spawn", delayTime, 2f);	
 	}
 	

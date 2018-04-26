@@ -10,11 +10,7 @@ using VibrationType = Thalmic.Myo.VibrationType;
 
 public class ChangeScene : MonoBehaviour
 {
-    public string scene;
    
-    PlayerController ps;
-
-
     public void Play()
     {
         SceneManager.LoadScene("move", LoadSceneMode.Single);

@@ -9,13 +9,12 @@ public class RoadGen : MonoBehaviour {
 	private float width;
 	public ObjectPooler objPool;
 
-	//private YellowGen carGen;
-	//public float randCar;
+	
 
 	// Use this for initialization
 	void Start () {
 		width = road.GetComponent<BoxCollider2D>().size.y;
-		//carGen = FindObjectOfType<YellowGen>();
+		
 	
 	}
 	
@@ -24,7 +23,7 @@ public class RoadGen : MonoBehaviour {
 
 		if (transform.position.y < genPoint.position.y) {
 			transform.position = new Vector3 (transform.position.x, transform.position.y + width, transform.position.z);
-			//Instantiate (platform, transform.position, transform.rotation);
+			
 
 			GameObject newRoad = objPool.GetPooledObject();
 
@@ -32,9 +31,6 @@ public class RoadGen : MonoBehaviour {
 			newRoad.transform.rotation = transform.rotation;
 			newRoad.SetActive (true);
 
-			/*if(Random.Range(0f, 10f) < randCar){
-				carGen.CarMaker(new Vector3 (transform.position.x, transform.position.y + 10f, transform.position.z));
-			}*/
 		}
 	}
 }

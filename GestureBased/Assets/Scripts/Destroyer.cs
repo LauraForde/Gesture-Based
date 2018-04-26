@@ -13,17 +13,7 @@ public class Destroyer : MonoBehaviour {
 		
 	}
 	
-	// Update is called once per frame
-/*	void Update () {
-        if (transform.position.x < destroyPoint.transform.position.x)
-        {
 
-            Destroy (gameObject);
-            gameObject.SetActive(false);
-        }
-
-    }
-*/
     void OnCollisionEnter2D(Collision2D other){
         if(other.gameObject.name == "Gem"){
             gameObject.SetActive(false);

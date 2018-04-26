@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class GemDetection : MonoBehaviour {
 
 	private Rigidbody2D myRigidBody;
-    //public Text scoreText;
 	int score = 1;
     private ScoreManager sm;
 
@@ -15,12 +14,11 @@ public class GemDetection : MonoBehaviour {
     }
 
 	void OnTriggerEnter2D(Collider2D other){
-		if(other.gameObject.tag == "Player"){
+        if (other.gameObject.tag == "Player")
+        {
             sm.ScoreAdd(score);
             gameObject.SetActive(false);
-			/*score += 1;
-			scoreText.text = "Score: " + score;*/
-		}
+        }
 
 
 	}

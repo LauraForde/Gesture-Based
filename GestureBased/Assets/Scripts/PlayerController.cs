@@ -18,16 +18,18 @@ public class PlayerController : MonoBehaviour {
     public CameraController cs;
     private Rigidbody2D myRigidBody;
 
+    public GameManager manager;
+    public GameObject gameOver;
+    public GemSpawn gem;
+
+
+    //Myo variables
     public Material waveInMaterial;
     public Material waveOutMaterial;
     public Material doubleTapMaterial;
-    public GameObject gameOver;
-	public GemSpawn gem;
+  
 
     private Pose _lastPose = Pose.Unknown;
-
-    public GameManager manager;
-
 
     // Use this for initialization
     void Start () {
@@ -42,37 +44,25 @@ public class PlayerController : MonoBehaviour {
        
         ThalmicMyo thalmicMyo = myo.GetComponent<ThalmicMyo>();
 
-   
 
+           //Myo Gesture Controls
             if (thalmicMyo.pose != _lastPose)
             {
                 _lastPose = thalmicMyo.pose;
 
-                // Vibrate the Myo armband when a fist is made.
-                if (thalmicMyo.pose == Pose.Fist)
-                {
-                    thalmicMyo.Vibrate(VibrationType.Medium);
-                
-                     ExtendUnlockAndNotifyUserAction(thalmicMyo);
-
-                    // Change material when wave in, wave out or double tap poses are made.
-                }
-
+            
                 //Move car to the left
-                else if (thalmicMyo.pose == Pose.WaveIn)
+                 if (thalmicMyo.pose == Pose.WaveIn)
                 {
-
-             
+                
                       myRigidBody.position = new Vector2(myRigidBody.position.x - 10, myRigidBody.position.y );
 
-                    if (myRigidBody.position.x < -12.6)
-                    {
-                  //  DestroyObject(myRigidBody.gameObject);
-                     gameOver.gameObject.SetActive(true);
-					Destroy(myRigidBody);
-                  
+                        if (myRigidBody.position.x < -12.6)
+                        {
 
-                }
+                             gameOver.gameObject.SetActive(true);
+                             Destroy(myRigidBody);
+                         }
 
                      ExtendUnlockAndNotifyUserAction(thalmicMyo);
                 }
@@ -83,21 +73,19 @@ public class PlayerController : MonoBehaviour {
 
                       myRigidBody.position = new Vector2( myRigidBody.position.x + 10, myRigidBody.position.y);
 
-                if (myRigidBody.position.x > 12.47)
-                {
-                    // DestroyObject(myRigidBody);
-                    gameOver.gameObject.SetActive(true);
-					Destroy(myRigidBody);
+                        if (myRigidBody.position.x > 12.47)
+                        {
+                            gameOver.gameObject.SetActive(true);
+					        Destroy(myRigidBody);
 
-                }
-                    // SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
-
+                        }
+                   
                 }
 
-                ExtendUnlockAndNotifyUserAction(thalmicMyo);
-                }
-              
+                     ExtendUnlockAndNotifyUserAction(thalmicMyo);
             }
+              
+     }
 
 
     void OnTriggerEnter2D(Collider2D car)

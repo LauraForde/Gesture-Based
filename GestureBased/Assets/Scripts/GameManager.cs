@@ -18,9 +18,7 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		/*if(Input.GetKeyDown(KeyCode.R)){
-			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-		}*/
+		
 		if(Input.GetKeyDown(KeyCode.E)){
 			SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
 		}
@@ -32,10 +30,7 @@ public class GameManager : MonoBehaviour {
 		playerGen.gameObject.SetActive(false);
 		yield return new WaitForSeconds (0.5f);
 
-		/*destroy = FindObjectsOfType<Destroyer> ();
-		for(int i = 0; i < destroy.Length; i++){
-			destroy [i].gameObject.SetActive (false);
-		}*/
+	
         playerGen.transform.position = playerStart;
 		roadGen.position = roadStart;
 		playerGen.gameObject.SetActive(true);
