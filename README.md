@@ -19,7 +19,7 @@ gestures that the Myo responed to: ![gestures](https://user-images.githubusercon
 
 However for our application we are using the "wave-in"   
   ![waveLeft](https://user-images.githubusercontent.com/15687193/39141513-eea0f78c-471f-11e8-8338-e89b089a797e.png  "Wave Left")  
-   to mave the car to the left and "wave-out"  
+   to move the car to the left and "wave-out"  
     ![waveRight](https://user-images.githubusercontent.com/15687193/39141479-d90f0a12-471f-11e8-90f6-8741865b2490.png "Wave Right")   
      to move the car right in order to avoid the oncoming randomly generated cars for the game to continue and to pick up gems to add to the score.
 
